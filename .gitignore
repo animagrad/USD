@@ -4,6 +4,8 @@
 ._.DS_Store
 
 # AMG !!!
+.vscode
+
 ## Python ##
 __pycache__/
 *.py[cod]
