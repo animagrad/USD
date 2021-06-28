@@ -36,6 +36,7 @@ using std::string;
 #if (ARCH_COMPILER_GCC_MAJOR == 3 && ARCH_COMPILER_GCC_MINOR >= 1) || \
     ARCH_COMPILER_GCC_MAJOR > 3 || defined(ARCH_COMPILER_CLANG)
 #define _AT_LEAST_GCC_THREE_ONE_OR_CLANG
+#include <cxxabi.h>
 #endif
 
 PXR_NAMESPACE_OPEN_SCOPE
@@ -138,7 +139,7 @@ _StripPxrInternalNamespace(string* name)
 #endif
 
 #if defined(_AT_LEAST_GCC_THREE_ONE_OR_CLANG)
-#include <cxxabi.h>
+//#include <cxxabi.h>
 
 /*
  * This routine doesn't work when you get to gcc3.4.

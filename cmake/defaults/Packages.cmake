@@ -52,7 +52,7 @@ if(PXR_ENABLE_PYTHON_SUPPORT)
             program_options
         REQUIRED
     )
-
+    message("*** Python = ${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}")
     # Set up a version string for comparisons. This is available
     # as Boost_VERSION_STRING in CMake 3.14+
     set(boost_version_string "${Boost_MAJOR_VERSION}.${Boost_MINOR_VERSION}.${Boost_SUBMINOR_VERSION}")
@@ -71,12 +71,18 @@ if(PXR_ENABLE_PYTHON_SUPPORT)
         # Boost_PYTHON_LIBRARY variable so that we don't have to duplicate this
         # logic in each library's CMakeLists.txt.
         set(python_version_nodot "${PYTHON_VERSION_MAJOR}${PYTHON_VERSION_MINOR}")
+        message("*** python_version_nodot = ${python_version_nodot}")
+        # set(Boost_USE_STATIC_LIBS "ON")
         find_package(Boost
             COMPONENTS
                 python${python_version_nodot}
             REQUIRED
         )
         set(Boost_PYTHON_LIBRARY "${Boost_PYTHON${python_version_nodot}_LIBRARY}")
+        message("*** ${python_version_nodot} ${PYTHON_VERSION_MAJOR}${PYTHON_VERSION_MINOR}")
+        message("*** ${Boost_PYTHON${python_version_nodot}_LIBRARY}")
+        message("*** Boost_PYTHON_LIBRARY = ${Boost_PYTHON_LIBRARY}")
+        message("*** Boost_PYTHON27_LIBRARY_RELASE = ${Boost_PYTHON27_LIBRARY_RELASE}")
     else()
         find_package(Boost
             COMPONENTS

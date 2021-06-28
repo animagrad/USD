@@ -1,1 +1,16 @@
 .p4*
+.DS_Store
+.AppleDouble
+._.DS_Store
+
+# AMG !!!
+.vscode
+
+## Python ##
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg
+
+tmp*
+env_*

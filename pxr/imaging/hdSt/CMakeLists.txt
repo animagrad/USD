@@ -26,6 +26,8 @@ pxr_library(hdSt
         trace
         ${GLEW_LIBRARY}
         ${OPENSUBDIV_LIBRARIES}
+        GL
+        z
 
     INCLUDE_DIRS
         ${GLEW_INCLUDE_DIR}
